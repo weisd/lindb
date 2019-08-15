@@ -12,6 +12,7 @@ help:  ## Display this help
 
 build-frontend:  clean-build
 	cd web/ && make web_build
+	cd broker/api && rice embed-go
 
 GOOS ?= $(shell go env GOOS)
 GOARCH ?= $(shell go env GOARCH)
@@ -45,7 +46,7 @@ pb:  ## generate pb file.
 
 clean-build:
 	rm -f bin/lind
-	cd web/ && make web_clean
+	# cd web/ && make web_clean
 
 clean-tmp: ## clean up tmp and test out files
 	find . -type f -name '*.out' -exec rm -f {} +

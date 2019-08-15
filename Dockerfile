@@ -4,6 +4,7 @@ RUN mkdir -p /bin/lindb
 WORKDIR /bin/lindb
 
 COPY ./bin .
+COPY ./web/build ./web/build
 
 RUN ./lind broker initialize-config \
     && ./lind storage initialize-config \

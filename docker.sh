@@ -2,7 +2,7 @@
 
 all_before(){
     echo "### make build-all start!"
-    make build GOOS=linux
+    make build-all GOOS=linux PUBLIC_URL=/static/
     echo "### make build-all done!"
 }
 
